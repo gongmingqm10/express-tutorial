@@ -35,3 +35,84 @@ Then you should successfully visit the `http://localhost:3000`
 
 ![Express page](http://7xj9js.com1.z0.glb.clouddn.com/express%20home%20page =300x)
 
+## Know Express Routes
+
+Get to know your express routing. Plese refer to the [document](http://www.expressjs.com.cn/guide/routing.html).
+
+We can find:
+
+```
+var express = require('express');
+
+var routes = require('./routes/index');
+var users = require('./routes/users');
+
+var app = express();
+
+app.use('/', routes);
+app.use('/users', users);
+```
+
+In the `routes/index.js`, we defined:
+
+```
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+module.exports = router;
+```
+
+This will handle the get request `localhost:3000`.
+
+In the `routes/users.js`, we defined:
+
+```
+var express = require('express');
+var router = express.Router();
+
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
+});
+
+module.exports = router;
+```
+
+The request `localhost:3000/users` will be handled by this one.
+
+## Config in app.js
+
+All the configurations are declared in `app.js`. 
+
+```
+app.use(express.static(path.join(__dirname, 'public')));
+```
+Express set the `public` directory as the static resource. So the App got access to the static files in `public` folder.
+Basically, from the scaffold, we could find the `images`, `javascripts` and `stylesheets`. We could refer the js, css and images
+in the html template.
+
+```
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+```
+
+This part is aimed at view engine setup. Files under `views` could be rendered and back to browser. And the `jade` is the view engine.
+That's why the files type is jade. [Learn more about Jade](http://jade-lang.com/).
+
+
+## Reference
+
+* [Express 中文资源](http://www.expressjs.com.cn/)
+* [Express Official](http://www.expressjs.com)
+* [Nodejs](https://nodejs.org)
+* [NPM modules](https://www.npmjs.com/)
+ 
+
+
+
