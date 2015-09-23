@@ -33,7 +33,7 @@ npm install & npm start
 
 Then you should successfully visit the `http://localhost:3000`
 
-![Express page](http://7xj9js.com1.z0.glb.clouddn.com/express%20home%20page =300x)
+![Express page](http://github.com/gongmingqm10/express-tutorial/raw/master/public/images/express-home.png =300x)
 
 ## Know Express Routes
 
