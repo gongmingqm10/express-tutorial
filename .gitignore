@@ -27,4 +27,6 @@ build/Release
 node_modules
 .idea/
 
-public/
+public/images/
+public/javascripts/
+public/stylesheets/
